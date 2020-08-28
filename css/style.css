@@ -32,10 +32,10 @@ body main div {
   z-index: -2;
 }
 
-@media (max-width: 1290px) {
+@media (max-width: 1700px) {
   .bg_video {
     width: auto;
-    height: 100px;
+    height: 100%;
   }
 }
 
@@ -69,7 +69,32 @@ header .nav {
   width: 50%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 100%;
+}
+
+header .nav ul {
+  width: 90%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 5;
+}
+
+header .nav ul li {
+  display: block;
+}
+
+header .nav ul li img {
+  display: block;
+  margin: 0 0 auto auto;
 }
 
 header .nav img {
@@ -91,9 +116,57 @@ header .nav img:active {
           box-shadow: #42c3cc 1px 1px 5px;
 }
 
-@media (max-height: 500px) {
+header .nav .burger {
+  margin: auto 20px auto auto;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  display: none;
+  height: 100%;
+}
+
+header .nav .burger img {
+  height: 100%;
+}
+
+@media (max-width: 576px) {
+  header .nav ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 6vh 0 0 0;
+  }
+  header .nav .burger {
+    display: block;
+    z-index: 50;
+  }
+}
+
+@media (min-width: 576px) {
+  header .nav ul {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    position: relative;
+  }
+}
+
+@media (max-height: 600px) {
   header {
     height: 10%;
+  }
+  header .logo img {
+    height: 80%;
+  }
+  header .nav .burger img {
+    height: 80%;
+  }
+}
+
+@media (max-height: 600px) and (max-width: 576px) {
+  header .nav ul {
+    padding: 10vh 2vw 0 0;
+    display: none;
   }
 }
 
@@ -102,7 +175,7 @@ header .nav img:active {
   height: 80%;
 }
 
-@media (max-height: 500px) {
+@media (max-height: 600px) {
   .container {
     height: 70%;
   }
@@ -156,7 +229,7 @@ footer img:active {
           box-shadow: #42c3cc 1px 1px 5px;
 }
 
-@media (max-height: 500px) {
+@media (max-height: 600px) {
   footer {
     height: calc(20% - 10px);
   }
