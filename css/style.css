@@ -4,7 +4,16 @@ body {
 }
 
 body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 2vh auto;
+  padding: 0;
+  overflow: hidden;
   max-width: 600px;
   height: 95vh;
   background-color: rgba(255, 255, 255, 0.3);
@@ -174,10 +183,104 @@ header .nav .burger img {
 }
 
 .container {
-  width: 100%;
+  max-width: 600px;
   overflow: auto;
   height: 94%;
-  margin: 0;
+  padding: 5% 10% 10% 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .manag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container .manag img {
+  height: 13px;
+  width: 13px;
+  padding: 5px;
+  opacity: 0.5;
+}
+
+.container .manag img:hover {
+  -webkit-box-shadow: #0d919b 0 0 10px;
+          box-shadow: #0d919b 0 0 10px;
+  opacity: 1;
+  border-radius: 50%;
+}
+
+.container .manag img:active {
+  -webkit-box-shadow: #42c3cc 1px 1px 5px;
+          box-shadow: #42c3cc 1px 1px 5px;
+  opacity: 1;
+}
+
+.container div {
+  text-align: center;
+}
+
+.container .task {
+  margin-bottom: 5px;
+}
+
+.container .task .task_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .task .task_content span {
+  font: 500 1.2em arial;
+  width: 100%;
+  text-align: left;
+}
+
+.container .task .subTask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .task .subTask span {
+  font: 300 1em arial;
+  text-align: left;
+  width: 100%;
+}
+
+.container .task .item {
+  margin: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media (max-width: 670px) {
+  .container .task .task_content span {
+    font: 400 1em arial;
+  }
+  .container .task .subTask input {
+    margin: 2px;
+  }
+  .container .task .item {
+    margin: 3px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 @media (max-height: 600px) {

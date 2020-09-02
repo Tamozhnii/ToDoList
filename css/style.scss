@@ -3,7 +3,11 @@ body {
   padding: 0 5vw;
 
   main {
+    display: flex;
+    flex-direction: column;
     margin: 2vh auto;
+    padding: 0;
+    overflow: hidden;
     max-width: 600px;
     height: 95vh;
     background-color: rgba(#ffffff, 0.3);
@@ -148,10 +152,92 @@ header {
 //header
 
 .container {
-  width: 100%;
+  max-width: 600px;
   overflow: auto;
   height: 94%;
-  margin: 0;
+  padding: 5% 10% 10% 10%;
+  display: flex;
+  flex-direction: column;
+
+  .manag {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      height: 13px;
+      width: 13px;
+      padding: 5px;
+      opacity: 0.5;
+
+      &:hover {
+        box-shadow: #0d919b 0 0 10px;
+        opacity: 1;
+        border-radius: 50%;
+      }
+
+      &:active {
+        box-shadow: #42c3cc 1px 1px 5px;
+        opacity: 1;
+      }
+    }
+  }
+
+  div {
+    text-align: center;
+  }
+
+  .task {
+    margin-bottom: 5px;
+
+    .task_content {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font: 500 1.2em arial;
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    .subTask {
+      display: flex;
+
+      span {
+        font: 300 1em arial;
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    .item {
+      margin: 5px;
+      align-self: center;
+    }
+  }
+
+
+  @media (max-width: 670px) {
+    .task {
+      .task_content {
+        span {
+          font: 400 1em arial;
+        }
+      }
+
+      .subTask {
+        input {
+          margin: 2px;
+        }
+
+      }
+
+      .item {
+        margin: 3px;
+        align-self: center;
+      }
+    }
+  }
 
   @media (max-height: 600px) {
     height: 90%;
