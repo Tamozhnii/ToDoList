@@ -241,6 +241,7 @@ window.onload = () => {
     container.appendChild(li);
     EventSubAdd();
     CheckEvent();
+    DeleteEvent();
   }
 
   // Функция добавления Подзадачи
@@ -248,13 +249,15 @@ window.onload = () => {
     let subTasks = document.querySelector(`#${_id} .subTasks`);
     const li = document.createElement("li");
     li.setAttribute("class", "subTask");
-
+    let subs = subTasks.querySelectorAll(".subTask").length;
+    li.setAttribute("id", 's' + subs);
     let newSubTask = `<input class="item check" type="checkbox"/><span class="item" style="text-decoration: none">${subTaskName}</span><div class="manag"><img src="./img/pencil.png" class="edit item"/><img src="./img/blocked.png" class="del item"/></div>`;
     li.innerHTML = newSubTask;
 
     subTasks.appendChild(li);
     _id = "";
     CheckEvent();
+    DeleteEvent();
   }
 
   // Функция зачеркивания выполненного пунката
@@ -277,6 +280,29 @@ window.onload = () => {
     }
   }
   CheckEvent();
+
+  // Функция удаления Задачи/Подзадачи
+  function DeleteTask(task) {
+    let id = task.parentElement.parentElement.getAttribute("id");
+    if (id !== null) {
+      let subtasks = task.parentElement.parentElement.parentElement;
+      let s = subtasks.querySelector("#" + id);
+      subtasks.removeChild(s);
+    } else {
+      id = task.parentElement.parentElement.parentElement.getAttribute("id");
+      let t = container.querySelector('#' + id);
+      container.removeChild(t);
+    }
+  }
+
+  // Функция добавления событий удаления
+  function DeleteEvent() {
+    let dels = document.querySelectorAll(".del");
+    for (let i = 0; i < dels.length; i++) {
+      dels[i].addEventListener('click', () => DeleteTask(dels[i]));
+    }
+  }
+  DeleteEvent();
 
   // Нажатие клавишь
   document.onkeyup = (e) => {
