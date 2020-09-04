@@ -196,6 +196,10 @@ header .nav .burger img {
           flex-direction: column;
 }
 
+.container span:hover {
+  text-shadow: #5dc8e5 0 0 5px;
+}
+
 .container .manag {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,6 +236,15 @@ header .nav .burger img {
 
 .container .task {
   margin-bottom: 5px;
+}
+
+.container .task .edit_text {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  height: 15px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .container .task .task_content {
@@ -405,6 +418,10 @@ header .nav .burger img {
   overflow: auto;
   display: none;
   z-index: 8;
+  padding: 10px 5% 10px 5px;
+  text-align: justify;
+  color: white;
+  text-shadow: black 1px 1px 2px;
 }
 
 .saves,
@@ -489,5 +506,11 @@ header .nav .burger img {
 .deletes div .save_no:active,
 .deletes div .delete_no:active {
   background: rgba(255, 255, 255, 0.685);
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
