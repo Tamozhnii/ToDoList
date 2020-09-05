@@ -60,6 +60,9 @@ window.onload = () => {
       }
       expand.setAttribute("src", "./img/circle-down.png");
     }
+    if (ul.style.display === "flex") {
+      ul.style.display = "none";
+    }
   });
 
   // Кнопка меню - Сохранить
@@ -73,8 +76,6 @@ window.onload = () => {
     }
     if (ul.style.display === "flex") {
       ul.style.display = "none";
-    } else {
-      ul.style.display = "flex";
     }
   }
   save.addEventListener("click", () => Save());
@@ -90,8 +91,6 @@ window.onload = () => {
     }
     if (ul.style.display === "flex") {
       ul.style.display = "none";
-    } else {
-      ul.style.display = "flex";
     }
   }
   reference.addEventListener("click", () => Reference());
@@ -189,7 +188,10 @@ window.onload = () => {
     }
     if (ul.style.display === "flex") ul.style.display = "none";
   }
-  add.addEventListener("click", () => Add());
+  add.addEventListener("click", () => {
+    _id = '';
+    Add();
+  });
 
   // Добавление подзадачи
   function SubAdd(id) {

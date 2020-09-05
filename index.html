@@ -1,142 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/normalize.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./css/normalize.css" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-  <title>ToDoList</title>
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
-
-<body>
-  <main>
-    <header>
-      <div class="logo">
-        <img src="./img/logo.png" alt="" />
-      </div>
-      <div class="nav">
-        <div class="burger">
-          <img src="./img/menu.png" alt="" />
+  <body>
+    <main>
+      <header>
+        <div class="logo">
+          <img src="./img/logo.png" alt="" />
         </div>
-        <ul>
-          <li><img src="./img/bin.png" alt="" class="delete" /></li>
-          <li><img src="./img/floppy-disk.png" alt="" class="save" /></li>
-          <li><img src="./img/circle-up.png" alt="" class="expand" /></li>
-          <li><img src="./img/question.png" alt="" class="reference" /></li>
-        </ul>
-      </div>
-    </header>
-
-    <ol class="container">
-      <!-- <li class="task" id="t0">
-        <div class="task_content">
-          <input class="item check" type="checkbox" />
-          <span class="item" style="text-decoration: none; display: block">задача 1
-          </span>
-          <input class="edit_text" type="text" style="display: none" />
-          <div class="manag">
-            <img src="./img/plus.png" class="subAdd item" />
-            <img src="./img/pencil.png" class="edit item" />
-            <img src="./img/blocked.png" class="del item" />
+        <div class="nav">
+          <div class="burger">
+            <img src="./img/menu.png" alt="" />
           </div>
+          <ul>
+            <li><img src="./img/bin.png" alt="" class="delete" /></li>
+            <li><img src="./img/floppy-disk.png" alt="" class="save" /></li>
+            <li><img src="./img/circle-up.png" alt="" class="expand" /></li>
+            <li><img src="./img/question.png" alt="" class="reference" /></li>
+          </ul>
         </div>
-        <ul class="subTasks" style="display: block">
-          <li class="subTask" id="s0">
-            <input class="item check" type="checkbox" checked />
-            <span class="item" style="text-decoration: line-through; display: block">
-              подзадача 1
-            </span>
-            <input class="edit_text" type="text" style="display: none" />
-            <div class="manag">
-              <img src="./img/pencil.png" class="edit item" />
-              <img src="./img/blocked.png" class="del item" />
-            </div>
+      </header>
+
+      <ol class="container"></ol>
+
+      <img src="./img/plus.png" alt="" class="add" tabindex="1" />
+
+      <div class="input window" style="display: none">
+        <textarea id="input"></textarea>
+        <div>
+          <button class="input_no">&times;</button>
+          <button class="input_yes">&check;</button>
+        </div>
+      </div>
+
+      <div class="fond window" style="display: none"></div>
+
+      <div class="references window" style="display: none">
+        <ul>
+          <li>
+            <p>
+              В поле ввода текста добавьте наименование задачи, затем нажмите +
+              или клавишу Enter
+            </p>
+          </li>
+          <li>
+            <p>Нажмите + напротив созданной задачи, чтобы добавить подзадачу</p>
+          </li>
+          <li>
+            <p>
+              Задачу можно удалить нажав на соответствующую кнопку напротив нее,
+              либо нажав глобальную кнопку в меню или Delete, и подтвердив
+              действие, вы удалите все записи
+            </p>
+          </li>
+          <li>
+            <p>
+              Нажав на радиобатн слева от задачи, вы пометите задачу как
+              выполненной, она будет зачерктнута, и наоборот
+            </p>
+          </li>
+          <li>
+            <p>
+              Нажав в меню на стрелочку вниз вы развернете все задачи с
+              подзадачами, нажав повторно - свернете
+            </p>
+          </li>
+          <li>
+            <p>
+              Нажав в меню на сохранить или сочетании клавишь Alt + S, и выбрав
+              "Да" в появившемся окне, вы сохраните текущее состояние задач для
+              своего устройства, затем при повторном открытии, данные будут
+              восстановлены
+            </p>
+          </li>
+          <li>
+            <p>
+              Выделив соответствующую задачу или подзадачу, вы можете его
+              отредактировать в поле ниже
+            </p>
           </li>
         </ul>
-      </li> -->
-    </ol>
-
-    <img src="./img/plus.png" alt="" class="add" tabindex="1" />
-
-    <div class="input window" style="display: none">
-      <textarea id="input"></textarea>
-      <div>
-        <button class="input_no">&times;</button>
-        <button class="input_yes">&check;</button>
       </div>
-    </div>
 
-    <div class="fond window" style="display: none"></div>
-
-    <div class="references window" style="display: none">
-      <ul>
-        <li>
-          <p>
-            В поле ввода текста добавьте наименование задачи, затем нажмите +
-            или клавишу Enter
-          </p>
-        </li>
-        <li>
-          <p>Нажмите + напротив созданной задачи, чтобы добавить подзадачу</p>
-        </li>
-        <li>
-          <p>
-            Задачу можно удалить нажав на соответствующую кнопку напротив нее,
-            либо нажав глобальную кнопку в меню или Delete, и подтвердив
-            действие, вы удалите все записи
-          </p>
-        </li>
-        <li>
-          <p>
-            Нажав на радиобатн слева от задачи, вы пометите задачу как
-            выполненной, она будет зачерктнута, и наоборот
-          </p>
-        </li>
-        <li>
-          <p>
-            Нажав в меню на стрелочку вниз вы развернете все задачи с
-            подзадачами, нажав повторно - свернете
-          </p>
-        </li>
-        <li>
-          <p>
-            Нажав в меню на сохранить или сочетании клавишь Alt + S, и выбрав
-            "Да" в появившемся окне, вы сохраните текущее состояние задач для
-            своего устройства, затем при повторном открытии, данные будут
-            восстановлены
-          </p>
-        </li>
-        <li>
-          <p>
-            Выделив соответствующую задачу или подзадачу, вы можете его
-            отредактировать в поле ниже
-          </p>
-        </li>
-      </ul>
-    </div>
-
-    <div class="saves window" style="display: none">
-      <span>Сохранить?</span>
-      <div>
-        <button class="save_no">&times;</button>
-        <button class="save_yes">&check;</button>
+      <div class="saves window" style="display: none">
+        <span>Сохранить?</span>
+        <div>
+          <button class="save_no">&times;</button>
+          <button class="save_yes">&check;</button>
+        </div>
       </div>
-    </div>
 
-    <div class="deletes window" style="display: none">
-      <span>Удалить все записи?</span>
-      <div>
-        <button class="delete_no">&times;</button>
-        <button class="delete_yes">&check;</button>
+      <div class="deletes window" style="display: none">
+        <span>Удалить все записи?</span>
+        <div>
+          <button class="delete_no">&times;</button>
+          <button class="delete_yes">&check;</button>
+        </div>
       </div>
-    </div>
-  </main>
-  <script src="./js/main.js"></script>
-  <video src="./img/bg.mp4" class="bg_video" autoplay muted loop></video>
-</body>
-
+    </main>
+    <script src="./js/main.js"></script>
+    <video src="./img/bg.mp4" class="bg_video" autoplay muted loop></video>
+  </body>
 </html>
